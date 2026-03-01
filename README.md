@@ -381,4 +381,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **DPI Analyzer** - Enterprise-grade network monitoring solution built for performance, security, and scalability.
 
-*Made with ❤️ by Mayank Sharma*
+*Made with ❤️ by Mayank Sharma for DPI Analyzer*
