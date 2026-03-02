@@ -368,14 +368,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Nginx](https://nginx.org/) - Web server
 - [Docker](https://www.docker.com/) - Containerization
 
-## 📊 Project Stats
+## 📊 Project Statistics
 
 - **Lines of Code**: ~15,000
 - **Test Coverage**: 85%+
-- **Dependencies**: 45
-- **Contributors**: 12
-- **Stars**: 1,200+
-- **Forks**: 200+
+- **Dependencies**: 45 (including development dependencies)
+- **Contributors**: 12 (and counting)
+- **GitHub Stars**: 1,200+ (thank you for your support)
+- **GitHub Forks**: 200+ (join the community)
 
 ---
 
