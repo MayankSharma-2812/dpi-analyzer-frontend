@@ -1,384 +1,477 @@
-# DPI Analyzer - Production Ready Network Monitoring Solution
+# DPI Analyzer
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/your-username/dpi-analyzer)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.0.0-orange.svg)](https://github.com/your-username/dpi-analyzer/releases)
+Enterprise-grade **Deep Packet Inspection (DPI) network monitoring platform** with real-time traffic analytics, security threat detection, and a modern dashboard.
 
-A comprehensive Deep Packet Inspection (DPI) network monitoring solution with real-time analytics, security monitoring, and professional UI.
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-orange)
 
-## 🚀 Features
+---
 
-### Core Capabilities
-- **Real-time Network Monitoring** - Live packet capture and analysis
-- **Deep Packet Inspection** - Advanced protocol detection and analysis
-- **Security Threat Detection** - Automated threat identification and alerting
-- **Traffic Analytics** - Comprehensive network traffic insights
-- **Professional Dashboard** - Modern, responsive React-based interface
+# Overview
 
-### Technical Features
-- **Production Ready** - Enterprise-grade architecture and security
-- **Scalable Design** - Horizontal scaling support
-- **High Performance** - Optimized for high-volume traffic
-- **API-First** - RESTful API with comprehensive documentation
-- **Containerized** - Docker support for easy deployment
-- **Monitoring** - Built-in health checks and metrics
+DPI Analyzer provides **real-time network visibility and threat monitoring** through deep packet inspection.
 
-## 🏗️ Architecture
+It combines a high-performance Python backend with a modern React frontend to deliver powerful analytics and monitoring tools.
+
+The platform is designed for:
+
+- Network administrators
+- Security analysts
+- DevOps teams
+- Enterprise monitoring environments
+
+---
+
+# Features
+
+## Core Capabilities
+
+- Real-time packet capture and inspection
+- Deep Packet Inspection (DPI)
+- Security threat detection
+- Network traffic analytics
+- DNS monitoring
+- Protocol analysis
+- Alert system
+
+## Platform Features
+
+- Production-ready architecture
+- Scalable infrastructure
+- REST API
+- Containerized deployment
+- Monitoring and health checks
+- High performance traffic analysis
+
+---
+
+# Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │    Backend       │    │   Database      │
-│   React 18      │◄──►│   Flask API     │◄──►│  PostgreSQL     │
-│   TypeScript    │    │   Python 3.11    │    │   Redis Cache   │
-│   Vite Build    │    │   Production     │    │   Monitoring    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+Frontend (React + TypeScript)
+        │
+        ▼
+Backend API (Flask + Python)
+        │
+        ▼
+Database Layer
+PostgreSQL + Redis
 ```
 
-## 📋 Prerequisites
+Components:
 
-- **Node.js**: 16.0.0 or higher
-- **Python**: 3.8 or higher
-- **PostgreSQL**: 12.0 or higher
-- **Redis**: 6.0 or higher
-- **Docker**: 20.0 or higher (optional)
+Frontend  
+React 18 + TypeScript + Vite
 
-## 🚀 Quick Start
+Backend  
+Flask API + Python 3
 
-### Option 1: Docker Deployment (Recommended)
+Data Layer  
+PostgreSQL + Redis
+
+Infrastructure  
+Docker + Nginx
+
+---
+
+# Prerequisites
+
+Required software:
+
+- Node.js >= 16
+- Python >= 3.8
+- PostgreSQL >= 12
+- Redis >= 6
+
+Optional:
+
+- Docker >= 20
+
+---
+
+# Quick Start
+
+## Docker Deployment (Recommended)
+
+Clone the repository
 
 ```bash
-# Clone repository
 git clone https://github.com/your-username/dpi-analyzer.git
 cd dpi-analyzer
-
-# Start all services
-docker-compose up -d
-
-# Access application
-# Frontend: http://localhost:80
-# API: http://localhost:5000
-# Grafana: http://localhost:3001
 ```
 
-### Option 2: Manual Deployment
+Start all services
 
 ```bash
-# Backend Setup
-cd backend
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app_production.py
+docker-compose up -d
+```
 
-# Frontend Setup (New Terminal)
+Access services
+
+Frontend  
+http://localhost
+
+API  
+http://localhost:5000
+
+Grafana  
+http://localhost:3001
+
+---
+
+## Manual Setup
+
+### Backend
+
+```bash
+cd backend
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python app_production.py
+```
+
+### Frontend
+
+Open a new terminal
+
+```bash
 cd frontend
+
 npm install
 npm run dev
 ```
 
-### Option 3: Production Deployment
+---
+
+# Production Deployment
+
+Make deployment script executable
 
 ```bash
-# Make deployment script executable
 chmod +x deploy.sh
+```
 
-# Run production deployment
+Run deployment
+
+```bash
 sudo ./deploy.sh
 ```
 
-## 📁 Project Structure
+---
+
+# Project Structure
 
 ```
-dpi-analyzer/
-├── backend/                    # Flask API backend
-│   ├── app_production.py      # Production application
-│   ├── analyzer.py           # DPI engine
-│   ├── config/               # Configuration modules
-│   │   ├── logging.py        # Logging setup
-│   │   └── settings.py       # App configuration
-│   ├── utils/                # Utility modules
-│   │   └── error_handlers.py # Error handling
-│   └── Dockerfile            # Backend Docker config
-├── frontend/                  # React frontend
-│   ├── src/
-│   │   ├── components/       # React components
-│   │   ├── pages/           # Page components
-│   │   ├── hooks/           # Custom hooks
-│   │   └── styles.css       # Production CSS
-│   ├── Dockerfile           # Frontend Docker config
-│   └── vite.config.prod.ts   # Production build config
-├── docker-compose.yml        # Docker Compose configuration
-├── deploy.sh                 # Production deployment script
-├── DEPLOYMENT.md             # Deployment documentation
-└── README.md                 # This file
+dpi-analyzer
+│
+├── backend
+│   ├── app_production.py
+│   ├── analyzer.py
+│   ├── config
+│   │   ├── logging.py
+│   │   └── settings.py
+│   ├── utils
+│   │   └── error_handlers.py
+│   └── Dockerfile
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── hooks
+│   │   └── styles.css
+│   ├── Dockerfile
+│   └── vite.config.prod.ts
+│
+├── docker-compose.yml
+├── deploy.sh
+├── DEPLOYMENT.md
+└── README.md
 ```
 
-## 🔧 Configuration
+---
 
-### Environment Variables
+# Configuration
 
-#### Backend (`.env`)
-```bash
+## Backend Environment
+
+Create `.env`
+
+```
 NODE_ENV=production
 PORT=5000
+
 DATABASE_URL=postgresql://user:pass@localhost:5432/dpi_analyzer
 REDIS_URL=redis://localhost:6379
+
 SECRET_KEY=your-secret-key
 JWT_SECRET=your-jwt-secret
 ```
 
-#### Frontend (`.env.production`)
-```bash
+## Frontend Environment
+
+Create `.env.production`
+
+```
 VITE_API_BASE_URL=https://your-domain.com/api/v1
 VITE_APP_TITLE=DPI Analyzer
 VITE_ENABLE_ANALYTICS=true
 ```
 
-## 📊 Features Overview
+---
 
-### Dashboard
-- Real-time network statistics
+# Dashboard Features
+
+Real-time metrics
+
 - Live traffic monitoring
-- Security alerts overview
+- Security alerts
+- Network statistics
 - System health indicators
 
-### Analytics
-- Traffic trends and patterns
+Analytics
+
 - Protocol distribution
-- Top talkers analysis
-- DNS query monitoring
+- DNS statistics
+- Traffic patterns
+- Top network talkers
 
-### Security
-- Threat detection dashboard
-- Security event timeline
-- Alert management system
-- Risk assessment tools
+Security
 
-### Settings
-- Configuration management
-- User preferences
-- System monitoring
-- Performance tuning
+- Threat detection
+- Alert timeline
+- Risk monitoring
+- Event tracking
 
-## 🔌 API Documentation
+---
 
-### Endpoints
+# API Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/v1/stats` | Network statistics |
-| GET | `/api/v1/alerts` | Security alerts |
-| GET | `/api/v1/top-talkers` | Top communicating hosts |
-| GET | `/api/v1/dns-domains` | DNS domain statistics |
-| GET | `/api/v1/protocol-signatures` | Protocol signatures |
-| GET | `/health` | Health check |
+|------|------|------|
+| GET | /api/v1/stats | Network statistics |
+| GET | /api/v1/alerts | Security alerts |
+| GET | /api/v1/top-talkers | Top communicating hosts |
+| GET | /api/v1/dns-domains | DNS domain statistics |
+| GET | /api/v1/protocol-signatures | Protocol signatures |
+| GET | /health | Health check |
 
-### Response Format
+Example Response
+
 ```json
 {
   "success": true,
-  "data": { ... },
+  "data": {},
   "timestamp": 1640995200
 }
 ```
 
-## 🛡️ Security Features
+---
 
-- **Authentication**: JWT-based authentication
-- **Authorization**: Role-based access control
-- **Rate Limiting**: API rate limiting
-- **CORS**: Cross-origin resource sharing
-- **Security Headers**: XSS, CSRF protection
-- **Input Validation**: Comprehensive input sanitization
-- **Encryption**: TLS/SSL encryption
+# Security
 
-## 📈 Performance
+Security features include:
 
-### Optimization Features
-- **Code Splitting**: Frontend bundle optimization
-- **Caching**: Redis-based caching
-- **Connection Pooling**: Database connection management
-- **Compression**: Gzip compression
-- **CDN Ready**: Static asset optimization
-- **Lazy Loading**: Component lazy loading
+- JWT authentication
+- Role based access control
+- API rate limiting
+- CORS protection
+- Security headers
+- Input validation
+- TLS encryption support
 
-### Benchmarks
-- **Response Time**: < 100ms (API)
-- **Throughput**: 10,000+ requests/second
-- **Memory Usage**: < 512MB (idle)
-- **CPU Usage**: < 25% (normal load)
+---
 
-## 🔍 Monitoring
+# Performance
 
-### Health Checks
-- Application health endpoint
+Typical metrics
+
+API response time  
+<100 ms
+
+Throughput  
+10,000+ requests/sec
+
+Idle memory usage  
+<512 MB
+
+CPU usage  
+<25% under normal load
+
+Optimizations
+
+- Redis caching
+- Connection pooling
+- Gzip compression
+- Frontend code splitting
+- Lazy loading
+- CDN ready assets
+
+---
+
+# Monitoring
+
+Health checks
+
+- Application status
 - Database connectivity
-- Redis connectivity
+- Redis availability
 - System resources
 
-### Metrics
-- Request/response times
-- Error rates
-- Traffic volume
-- Resource utilization
+Logging
 
-### Logging
-- Structured logging
+- Structured logs
 - Error tracking
-- Performance metrics
 - Security events
+- Performance metrics
 
-## 🚀 Deployment Options
+---
 
-### 1. Docker (Recommended)
-```bash
-docker-compose up -d
-```
+# Testing
 
-### 2. Kubernetes
-```bash
-kubectl apply -f k8s/
-```
+Backend tests
 
-### 3. Cloud Platforms
-- AWS ECS/EKS
-- Google Cloud Run/GKE
-- Azure Container Instances/AKS
-- DigitalOcean App Platform
-
-### 4. Traditional Server
-```bash
-sudo ./deploy.sh
-```
-
-## 🧪 Testing
-
-### Backend Tests
 ```bash
 cd backend
-python -m pytest tests/
+pytest tests
 ```
 
-### Frontend Tests
+Frontend tests
+
 ```bash
 cd frontend
 npm test
-npm run test:e2e
 ```
 
-### Integration Tests
+Integration tests
+
 ```bash
 npm run test:integration
 ```
 
-## 📝 Development
+---
 
-### Local Development Setup
+# Development Setup
 
-1. **Clone Repository**
+Clone repository
+
 ```bash
 git clone https://github.com/your-username/dpi-analyzer.git
 cd dpi-analyzer
 ```
 
-2. **Backend Development**
+Backend
+
 ```bash
 cd backend
 python3 -m venv venv
 source venv/bin/activate
+
 pip install -r requirements.txt
 python app.py
 ```
 
-3. **Frontend Development**
+Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-### Code Quality
-- **ESLint**: JavaScript/TypeScript linting
-- **Prettier**: Code formatting
-- **TypeScript**: Type checking
-- **Black**: Python code formatting
-- **Flake8**: Python linting
+---
 
-## 🤝 Contributing
+# Code Quality
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+Tools used
 
-### Development Guidelines
-- Follow coding standards
-- Write comprehensive tests
-- Update documentation
-- Use semantic versioning
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support
-
-### Documentation
-- [Deployment Guide](DEPLOYMENT.md)
-- [API Documentation](docs/api.md)
-- [Troubleshooting](docs/troubleshooting.md)
-
-### Community
-- [GitHub Issues](https://github.com/your-username/dpi-analyzer/issues)
-- [Discussions](https://github.com/your-username/dpi-analyzer/discussions)
-- [Wiki](https://github.com/your-username/dpi-analyzer/wiki)
-
-### Contact
-- Email: support@your-domain.com
-- Discord: [Join our Discord](https://discord.gg/your-invite)
-- Twitter: [@your-twitter](https://twitter.com/your-twitter)
-
-## 🗺️ Roadmap
-
-### Version 2.1
-- [ ] Advanced ML-based threat detection
-- [ ] Multi-tenant support
-- [ ] Advanced analytics dashboard
-- [ ] Mobile application
-
-### Version 2.2
-- [ ] Integration with SIEM systems
-- [ ] Automated response capabilities
-- [ ] Advanced reporting
-- [ ] API rate limiting per user
-
-### Version 3.0
-- [ ] Microservices architecture
-- [ ] Kubernetes operator
-- [ ] Advanced machine learning
-- [ ] Global deployment support
-
-## 🏆 Acknowledgments
-
-- [React](https://reactjs.org/) - Frontend framework
-- [Flask](https://flask.palletsprojects.com/) - Backend framework
-- [PostgreSQL](https://www.postgresql.org/) - Database
-- [Redis](https://redis.io/) - Caching
-- [Nginx](https://nginx.org/) - Web server
-- [Docker](https://www.docker.com/) - Containerization
-
-## 📊 Project Statistics
-
-- **Lines of Code**: ~15,000
-- **Test Coverage**: 85%+
-- **Dependencies**: 45 (including development dependencies)
-- **Contributors**: 12 (and counting)
-- **GitHub Stars**: 1,200+ (thank you for your support)
-- **GitHub Forks**: 200+ (join the community)
+- ESLint
+- Prettier
+- TypeScript
+- Black
+- Flake8
 
 ---
 
-**DPI Analyzer** - Enterprise-grade network monitoring solution built for performance, security, and scalability.
+# Contributing
 
-*Made with ❤️ by Mayank Sharma for DPI Analyzer*
+1. Fork the repository
+2. Create a new branch
+3. Commit changes
+4. Push branch
+5. Open a pull request
+
+---
+
+# License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.
+
+---
+
+# Support
+
+Documentation
+
+- Deployment Guide
+- API Documentation
+- Troubleshooting Guide
+
+Community
+
+- GitHub Issues
+- GitHub Discussions
+- Project Wiki
+
+Contact
+
+Email  
+support@your-domain.com
+
+---
+
+# Roadmap
+
+Version 2.1
+
+- ML based threat detection
+- Multi tenant support
+- Advanced analytics
+- Mobile dashboard
+
+Version 2.2
+
+- SIEM integrations
+- Automated responses
+- Advanced reporting
+- Per user rate limiting
+
+Version 3.0
+
+- Microservices architecture
+- Kubernetes operator
+- ML traffic classification
+- Global deployment support
+
+---
+
+# Acknowledgments
+
+- React
+- Flask
+- PostgreSQL
+- Redis
+- Nginx
+- Docker
+
+---
+
+DPI Analyzer  
+Enterprise network monitoring built for performance, security, and scalability.
